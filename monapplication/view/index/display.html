@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Filmothèque item</title>
+    <!-- <base href="http://localhost/todolist/www/"/> -->
+</head>
+
+<body>
+    <header>
+        <h1>Liste de films</h1>
+    </header>
+    
+    <ul>        <?php
+        //echo var_dump($this);
+        foreach($this->list as $item) : ?>
+        <li><a href="item/<?php echo $item->id;?>"><?php echo $item->titre;?></a></li><?php endforeach;?>
+    </ul>
+    <footer>
+        <p></p>
+    </footer>
+</body>
+
+
+</html>
