@@ -3,8 +3,12 @@
 class IndexController extends Controler {
    
    public function display() {
-      $this->view->list = Film::getList();
-      $this->view->display();
+      $films = Film::getList();
+      
+      $template = $this->twig->loadTemplate('/index/display.html.twig');
+      echo $template->render(array(
+          'films'  => $films
+      ));
    }
 
 }

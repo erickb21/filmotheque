@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bienvenue sur CINE CLUB</title>
+</head>
+<body>
+    <header>
+        <h1>Liste de films</h1>
+    </header>
+
+    <ul>
+        {% for film in films %}
+            <li><a href="film/{{ film.id_FILMS }}">{{ film.titre_FILMS }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <footer>
+    </footer>
+</body>
+</html>

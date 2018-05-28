@@ -6,10 +6,9 @@ class Film extends Model {
       $db = Database::getInstance();
       $sql = "SELECT * FROM films WHERE id_FILMS = :id";
       $stmt = $db->prepare($sql);
-      $stmt->setFetchMode(PDO::FETCH_CLASS, "Film");
+      $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
       $stmt->bindValue( ':id', $id, PDO::PARAM_STR); 
-
 
       $stmt->execute();
       return $stmt->fetch();
@@ -19,7 +18,7 @@ class Film extends Model {
       $db = Database::getInstance();
       $sql = "SELECT * FROM films";
       $stmt = $db->query($sql);
-      $stmt->setFetchMode(PDO::FETCH_CLASS, "Film");
+      $stmt->setFetchMode(PDO::FETCH_ASSOC);
       return $stmt->fetchAll();
 
    }

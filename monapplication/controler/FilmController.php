@@ -3,8 +3,14 @@
 class FilmController extends Controler {
    public function display() {
       $slug = $this->route["params"]["id"];
-      $this->view->film = Film::getFromSlug($slug);
-      $this->view->display();
+      $film = Film::getFromSlug($slug);
+
+      $template = $this->twig->loadTemplate('/film/display.html.twig');
+      echo $template->render(array(
+        'film' => $film
+      ));
    }
+
+    
 
 }
