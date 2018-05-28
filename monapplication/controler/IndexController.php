@@ -3,7 +3,7 @@
 class IndexController extends Controler {
    
    public function display() {
-      $this->view->list = Item::getList();
+      $this->view->list = Film::getList();
       $this->view->display();
    }
 

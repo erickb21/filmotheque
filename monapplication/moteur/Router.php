@@ -14,8 +14,8 @@ class Router {
       } else {
          $parts = explode("/", $query);
          //echo var_dump($parts);
-         if($parts[0] == "item" && count($parts) == 2) {
-            $result["controler"] = "Item";
+         if($parts[0] == "film" && count($parts) == 2) {
+            $result["controler"] = "Film";
             $result["action"] = "display";
             $result["params"]["id"] = $parts[1];            
          }

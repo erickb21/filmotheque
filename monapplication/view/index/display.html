@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Filmothèque item</title>
+    <title>Filmothèque Films</title>
     <!-- <base href="http://localhost/todolist/www/"/> -->
 </head>
 
@@ -14,8 +14,8 @@
     
     <ul>        <?php
         //echo var_dump($this);
-        foreach($this->list as $item) : ?>
-        <li><a href="item/<?php echo $item->id;?>"><?php echo $item->titre;?></a></li><?php endforeach;?>
+        foreach($this->list as $film) : ?>
+        <li><a href="film/<?php echo $film->id_FILMS;?>"><?php echo $film->titre_FILMS;?></a></li><?php endforeach;?>
     </ul>
     <footer>
         <p></p>
