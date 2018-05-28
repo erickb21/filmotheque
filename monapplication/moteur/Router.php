@@ -11,9 +11,10 @@ class Router {
       if( $query === "" || $query === "/" ) {
          $result["controler"] = "index";
          $result["action"] = "display";
+         $result["params"]["limit"] = 3;
+
       } else {
          $parts = explode("/", $query);
-         //echo var_dump($parts);
          if($parts[0] == "film" && count($parts) == 2) {
             $result["controler"] = "Film";
             $result["action"] = "display";
