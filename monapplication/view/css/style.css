@@ -1,4 +1,28 @@
-.imageRandom{
-    width: 300px;
-    height: 400px;
+.h-500{height: 500px;}
+.h-80{height: 80px;}
+
+.ptb-50{padding: 50px 0;}
+.pb-60{padding-bottom: 60px;}
+.pl-24{padding-left: 24px;}
+
+.ml-10{margin-left: 10px;}
+
+.d-flex{display:flex;}
+.justify-content-between{justify-content:space-between;}
+
+.roboto{font-family: 'Roboto', sans-serif;}
+.bold{font-weight: 700;}
+.medium{font-weight: 500;}
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+footer.page-footer {
+  margin: 0;
 }
