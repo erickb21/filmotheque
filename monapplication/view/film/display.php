@@ -8,9 +8,7 @@
 <body>
     <header>
         <h1>film préféré</h1>
-    </header><?php //echo var_dump($this);
-    //echo print_r($this);
-    ?>
+    </header>
     <h3><?php echo $this->film->titre_FILMS; ?>
     </h3>
     <p><?php echo $this->film->description_FILMS; ?></p>

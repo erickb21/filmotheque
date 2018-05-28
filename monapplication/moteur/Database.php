@@ -12,23 +12,12 @@ class Database {
 
    protected function __construct() {
       // A faire : fichier de config
-/*       $this->_db = new PDO(
-         "mysql:host=localhost;dbname=todolist;charset=utf8",
-         "root",
-         "root"
-      ); */
 
 define ("db_name","annuaire_films");
 define ("server_name","localhost");
 define ("user","root");
 define ("password","");
-//try{
     $this->_db = new PDO('mysql:host=' .constant("server_name").';dbname=' .constant("db_name") .';charset=utf8', constant('user'),constant('password')); 
-//$_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//}
-//catch(PDOException $e){die('erreur connexion :' .$e->getMessage());}
-
-
    }
 
    public function __call($method, array $arg) {
@@ -36,9 +25,6 @@ define ("password","");
       // delegue cet appel à l'objet PDO $this->_db
       return call_user_func_array(array($this->_db, $method), $arg);
    }
-
-
-
 }
 
 

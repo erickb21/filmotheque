@@ -9,7 +9,7 @@ class View {
    }
 
    public function display() {
-      $viewFile = ROOT . "/monapplication/view/" . $this->_route["controler"] . "/" . $this->_route["action"] . ".html";
+      $viewFile = ROOT . "/monapplication/view/" . $this->_route["controler"] . "/" . $this->_route["action"] . ".php";
 
       if( file_exists( $viewFile ) )
          include($viewFile);
