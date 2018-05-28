@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    
     <link href="monapplication/view/css/materialize.min.css" type="text/css" rel="stylesheet">
     <link href="monapplication/view/css/style.css" type="text/css" rel="stylesheet">
     <title>Bienvenue sur CINE CLUB</title>
 </head>
 <body>
-    <header>
-        <h1>Liste de films</h1>
-    </header>
     <nav class="white" role="navigation">
         <div class="nav-wrapper container">
-          <a id="logo-container" href="#" class="brand-logo">Logo</a>
+          <a href="#" class="brand-logo">
+            <img class="responsive-img" src="monapplication/view/img/logo-film.png" alt="Logo">
+          </a>
           <ul class="right hide-on-med-and-down">
             <li><a href="#">Navbar Link</a></li>
           </ul>
@@ -30,16 +29,13 @@
       <div id="index-banner" class="parallax-container">
         <div class="section no-pad-bot">
           <div class="container">
-            <br><br>
-            <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+            <h1 class="header center teal-text text-lighten-2">CINE CLUB</h1>
             <div class="row center">
               <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
             </div>
             <div class="row center">
               <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
             </div>
-            <br><br>
-    
           </div>
         </div>
         <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
@@ -48,18 +44,15 @@
     
       <div class="container">
         <div class="section">
-    
           <!--   Icon Section   -->
           <div class="row">
-
             {% for film in randomFilms %}
             <div class="col s12 m4">
-              <div class="icon-block">
-                <h2 class="center brown-text">{{ film.titre_FILMS }}</h2>
+              <h5 class="center brown-text">{{ film.titre_FILMS }}</h5>
+              <div class="center">
                 <a href="{{ film.id_FILMS }}">
-                    <img class="responsiv-img" src="{{ film.image_FILMS }}" alt="{{ film.titre_FILMS }}">
+                    <img class="imageRandom" src="{{ film.image_FILMS }}" alt="{{ film.titre_FILMS }}">
                 </a>
-                <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
               </div>
             </div>
             {% endfor %}
@@ -141,5 +134,9 @@
           </div>
         </div>
       </footer>
+
+    <script src="monapplication/view/js/jquery.min.js"></script>
+    <script src="monapplication/view/js/materialize.min.js"></script>
+    <script src="monapplication/view/js/init.js"></script>
 </body>
 </html>
