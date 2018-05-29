@@ -6,6 +6,9 @@
 .pb-60{padding-bottom: 60px;}
 .pl-24{padding-left: 24px;}
 
+.nomargin{margin: 0px;}
+
+.mtb-20{margin: 20px 0;}
 .ml-10{margin-left: 10px;}
 
 .d-flex{display:flex;}
@@ -36,10 +39,19 @@
   text-align: center;
 }
 
-nav ul a:hover
+nav a.grey-text.text-darken-4:hover
 {
   background-color: #ffc107c2;
   color: #fff !important;
+  transition: color .1s;
+}
+
+footer ul a{
+  color: #212121;
+}
+
+footer ul a:hover{
+  color:#039be5;
 }
 
 .upbutton{
