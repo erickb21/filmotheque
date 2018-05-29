@@ -35,7 +35,16 @@
   margin: 20px auto 0px;
   text-align: center;
 }
+
 nav ul a:hover
 {
   background-color: #ffc107c2;
+  color: #fff !important;
+}
+
+.upbutton{
+  position: absolute;
+  position: fixed;
+  right: 10%;
+  bottom: 10%;
 }
