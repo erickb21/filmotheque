@@ -4,11 +4,11 @@ class Film extends Model {
 
    public static function getFromSlug( $id ) {
       $db = Database::getInstance();
-      $sql = "SELECT * FROM films, films_genres, films_realisateurs, realisateurs, genres WHERE films.id_FILMS = :id AND films_genres.id_FILMS_FG=films.id_FILMS and films_realisateurs.id_FILMS_FR=films.id_FILMS group by films.id_FILMS";
+      $sql = "SELECT * FROM films WHERE id_FILMS=:id";
       $stmt = $db->prepare($sql);
       $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-      $stmt->bindValue( ':id', $id, PDO::PARAM_STR); 
+      $stmt->bindValue( ':id', $id, PDO::PARAM_INT); 
 
       $stmt->execute();
       return $stmt->fetch();

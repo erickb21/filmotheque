@@ -1,5 +1,6 @@
 .h-500{height: 500px;}
 .h-80{height: 80px;}
+.w100{width:100%;}
 
 .ptb-50{padding: 50px 0;}
 .pb-60{padding-bottom: 60px;}
@@ -10,19 +11,31 @@
 .d-flex{display:flex;}
 .justify-content-between{justify-content:space-between;}
 
-.roboto{font-family: 'Roboto', sans-serif;}
+.raleway{font-family: "Raleway", sans-serif;}
+
 .bold{font-weight: 700;}
 .medium{font-weight: 500;}
 
-nav ul a,
-nav .brand-logo {
-  color: #444;
-}
+.italic{font-style: italic;}
 
-p {
-  line-height: 2rem;
-}
+.fs-5{font-size: 5rem;}
+.fs-20{font-size: 20px;}
+.fs-30{font-size: 30px;}
 
-footer.page-footer {
-  margin: 0;
+.justify-align{text-align: justify;}
+
+.card .card-title{font-size: 20px;}
+
+.separator::after{      /* Séparateur centré */
+  content: "";
+  display: block;
+  height: 2px;
+  width: 40px;
+  background-color: #212121;
+  margin: 20px auto 0px;
+  text-align: center;
+}
+nav ul a:hover
+{
+  background-color: #ffc107c2;
 }
