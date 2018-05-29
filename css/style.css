@@ -13,6 +13,7 @@
 
 .d-flex{display:flex;}
 .justify-content-between{justify-content:space-between;}
+.justify-content-center{justify-content: center;}
 
 .raleway{font-family: "Raleway", sans-serif;}
 
