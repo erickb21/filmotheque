@@ -1,0 +1,806 @@
+﻿/****************************************************************************/
+/* bibliothèque de classes CSS :                                            */
+/* Ce fichier rassemble un grand nombre de classes génériques               */
+/*                          V 0.1                                           */
+/* règles de syntaxe générale   :                                           */
+/*                                                                          */
+/*   gik[type element]_[type propriété]_[valeurs]                           */
+/*                                                                          */
+/*    ce fichier peut être importé dans votre feuille de style :            */
+/*                                                                          */
+/*    specific_styles.css                                                   */
+/*                                                                          */
+/****************************************************************************/
+
+/*#region Balises HTML */
+
+html { font-size: 62.5%;}
+
+
+.gikbody_with100vm{width: 100vw;}
+.gikbody_height100vh {height: 100vh;}
+
+/*#endregion */
+
+/*#region container test styles */
+
+.giktest_containers_bgrdred {
+    background-color: red;
+}
+
+
+/*#endregion */
+
+
+
+/*#region       box : opsbox_[type propriété]_[valeurs] */
+
+/*#region Cursor */
+
+.gikbox_cursor_pointer_on {
+    cursor: pointer;
+}
+
+/*#endregion */
+
+/*#region box txt */
+.gikbox_txt_valignmiddle {
+    vertical-align: middle;
+}
+
+.gikbox_txt_haligncenter {
+    text-align: center;
+}
+
+.gikbox_txt_decorationnone {
+    text-decoration: none;
+}
+/*#endregion */
+
+
+/*#region       box display : gikbox_d[type]_[valeurs] */
+
+.gikbox_dnone {
+    display: none;
+}
+
+.gikbox_dflexhautovauto {
+    display: flex;
+}
+
+.gikbox_dflexhrightvcenter {
+    display: flex;
+    justify-content:flex-end;
+    align-items:center;
+}
+.gikbox_dflexalignitemvcenter {
+    align-items: center;
+}
+
+.gikbox_dflexvcolumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.gikbox_dflex_justify_between {
+    justify-content: space-between;
+}
+
+.gikbox_dflex_hcenter_vcenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gikbox_dflex_hcenter_vstart {
+    display: flex;
+    flex-direction: row;
+    /*justify-content:  flex-start;*/
+    align-items: flex-start;
+}
+
+.gikbox_dflex_hcenter_vend {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    /*align-items: center;*/
+}
+
+.gikbox_dflex_hcenter_varound {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /*align-items: center;*/
+}
+
+.gikbox_dflex_hbetween_vstart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.gikbox_dflex_haround_vcenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.gikbox_dflex_hbetween_vcenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gikbox_dflex_haround_vstart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.gikbox_dflex_hend_vcenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+opsbox_dflex_hend_vstart {
+    display: flex;
+    /*flex-direction:row;*/
+    justify-content: flex-end;
+    /*align-items:flex-start;*/
+}
+
+.gikbox_dflex_hstart_vcenter {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gikbox_dblock {
+    display: block;
+}
+
+.gikbox_dinlineblock {
+    display: inline-block;
+}
+
+/*#endregion        display */
+
+/*#region          box position : opsbox_pos[type]_([valeurs]) */
+
+.gikbox_posabsolute {
+    position: absolute;
+}
+
+.gikbox_posrelative {
+    position: relative;
+}
+
+.gikbox_poszindex_10 {
+    position: absolute;
+    z-index: 10;
+}
+
+.gikbox_poszindex_05 {
+    position: absolute;
+    z-index: 5;
+}
+
+.box_poszindex_neg10 {
+    position: absolute;
+    z-index: -10;
+}
+.gikbox_poszindex90 {
+    position: absolute;
+    z-index: 90;
+}
+.gikbox_poszindex100 {
+    position: absolute;
+    z-index: 100;
+}
+/*#endregion        position */
+
+/*#region Size */
+
+.gikbox_width100prc {
+    width: 100%;
+}
+
+.gikbox_height100prc {
+    height: 100%;
+}
+
+.gikbox_width50prc {
+    width: 50%;
+}
+
+.gikbox_height50prc {
+    height: 50%;
+}
+
+.gikbox_30x30px {
+    width: 30px;
+    height: 30px;
+}
+
+.gikbox_40x40px {
+    width: 40px;
+    height: 40px;
+}
+
+.gikbox_50x50px {
+    width: 50px;
+    height: 50px;
+}
+
+
+/*#endregion */
+
+
+
+
+/*#region box borders : gikbox_bordallsolid_[valeurs] */
+
+.gikbox_bordallsolid_black_1px {
+    border: 1px solid black;
+}
+
+.gikbox_bordallsolid_black_2px {
+    border: 2px solid black;
+}
+
+.gikbox_bordallsolid_black_3px {
+    border: 3px solid black;
+}
+
+.gikbox_bordallsolid_black_4px {
+    border: 4px solid black;
+}
+
+.gikbox_bordallsolid_black_5px {
+    border: 5px solid black;
+}
+
+.gikbox_bordallsolid_black_10px {
+    border: 10px solid black;
+}
+
+.gikbox_bordallsolid_black_5px {
+    border: 15px solid black;
+}
+
+.gikbox_bordallsolid_aaaaaa_1px {
+    border: 1px solid #aaaaaa;
+}
+
+/*#endregion box borders */
+
+/*#region gikbox margin */
+
+.gikbox_margall_01prc {
+    margin: 1%;
+}
+
+.gikbox_margall_05prc {
+    margin: 5%;
+}
+
+.gikbox_margall_10prc {
+    margin: 10%;
+}
+
+.gikbox_margall_15prc {
+    margin: 15%;
+}
+
+.gikbox_margall_20prc {
+    margin: 20%;
+}
+
+.gikbox_margall_25prc {
+    margin: 25%;
+}
+
+.gikbox_margall_30prc {
+    margin: 30%;
+}
+
+.gikbox_margall_40prc {
+    margin: 40%;
+}
+
+.gikbox_margall_50prc {
+    margin: 50%;
+}
+
+.gikbox_margright_01prc {
+    margin-right: 1%;
+}
+
+.gikbox_margright_05prc {
+    margin-right: 5%;
+}
+
+.gikbox_margright_10prc {
+    margin-right: 10%;
+}
+
+.gikbox_margright_15prc {
+    margin-right: 15%;
+}
+
+.gikbox_margright_20prc {
+    margin-right: 20%;
+}
+
+.gikbox_margright_25prc {
+    margin-right: 25%;
+}
+
+.gikbox_margright_30prc {
+    margin-right: 30%;
+}
+
+.gikbox_margright_40prc {
+    margin-right: 40%;
+}
+
+.gikbox_margright_50prc {
+    margin-right: 50%;
+}
+
+.gikbox_margleft_01prc {
+    margin-left: 1%;
+}
+
+.gikbox_margleft_05prc {
+    margin-left: 5%;
+}
+
+.gikbox_margleft_10prc {
+    margin-left: 10%;
+}
+
+.gikbox_margleft_15prc {
+    margin-left: 15%;
+}
+
+.gikbox_margleft_20prc {
+    margin-left: 20%;
+}
+
+.gikbox_margleft_25prc {
+    margin-left: 25%;
+}
+
+.gikbox_margleft_30prc {
+    margin-left: 30%;
+}
+
+.gikbox_margleft_40prc {
+    margin-left: 40%;
+}
+
+.gikbox_margleft_50prc {
+    margin-left: 50%;
+}
+
+.gikbox_margtop_01prc {
+    margin-top: 1%;
+}
+
+.gikbox_margtop_05prc {
+    margin-top: 5%;
+}
+
+.gikbox_margtop_10prc {
+    margin-top: 10%;
+}
+
+.gikbox_margtop_15prc {
+    margin-top: 15%;
+}
+
+.gikbox_margtop_20prc {
+    margin-top: 20%;
+}
+
+.gikbox_margtop_25prc {
+    margin-top: 25%;
+}
+
+.gikbox_margtop_30prc {
+    margin-top: 30%;
+}
+
+.gikbox_margtop_40prc {
+    margin-top: 40%;
+}
+
+.gikbox_margtop_50prc {
+    margin-top: 50%;
+}
+
+.gikbox_margbottom_01prc {
+    margin-bottom: 1%;
+}
+
+.gikbox_margbottom_05prc {
+    margin-bottom: 5%;
+}
+
+.gikbox_margbottom_10prc {
+    margin-bottom: 10%;
+}
+
+.gikbox_margbottom_15prc {
+    margin-bottom: 15%;
+}
+
+.gikbox_margbottom_20prc {
+    margin-bottom: 20%;
+}
+
+.gikbox_margbottom_25prc {
+    margin-bottom: 25%;
+}
+
+.gikbox_margbottom_30prc {
+    margin-bottom: 30%;
+}
+
+.gikbox_margbottom_40prc {
+    margin-bottom: 40%;
+}
+
+.gikbox_margbottom_50prc {
+    margin-bottom: 50%;
+}
+/*********************************************************************/
+.gikbox_margall_01px {
+    margin: 1px;
+}
+
+.gikbox_margall_05px {
+    margin: 5px;
+}
+
+.gikbox_margall_10px {
+    margin: 10px;
+}
+
+.gikbox_margall_15px {
+    margin: 15px;
+}
+
+.gikbox_margall_20px {
+    margin: 20px;
+}
+
+.gikbox_margall_25px {
+    margin: 25px;
+}
+
+.gikbox_margall_30px {
+    margin: 30px;
+}
+
+.gikbox_margall_40px {
+    margin: 40px;
+}
+
+.gikbox_margall_50px {
+    margin: 50px;
+}
+
+.gikbox_margright_01px {
+    margin-right: 1px;
+}
+
+.gikbox_margright_05px {
+    margin-right: 5px;
+}
+
+.gikbox_margright_10px {
+    margin-right: 10px;
+}
+
+.gikbox_margright_15px {
+    margin-right: 15px;
+}
+
+.gikbox_margright_20px {
+    margin-right: 20px;
+}
+
+.gikbox_margright_25px {
+    margin-right: 25px;
+}
+
+.gikbox_margright_30px {
+    margin-right: 30px;
+}
+
+.gikbox_margright_40px {
+    margin-right: 40px;
+}
+
+.gikbox_margright_50px {
+    margin-right: 50px;
+}
+
+
+.gikbox_margleft_01px {
+    margin-left: 1px;
+}
+
+.gikbox_margleft_05px {
+    margin-left: 5px;
+}
+
+.gikbox_margleft_10px {
+    margin-left: 10px;
+}
+
+.gikbox_margleft_15px {
+    margin-left: 15px;
+}
+
+.gikbox_margleft_20px {
+    margin-left: 20px;
+}
+
+.gikbox_margleft_25px {
+    margin-left: 25px;
+}
+
+.gikbox_margleft_30px {
+    margin-left: 30px;
+}
+
+.gikbox_margleft_40px {
+    margin-left: 40px;
+}
+
+.gikbox_margleft_50px {
+    margin-left: 50px;
+}
+
+.gikbox_margtop_01px {
+    margin-top: 1px;
+}
+
+.gikbox_margtop_05px {
+    margin-top: 5px;
+}
+
+.gikbox_margtop_10px {
+    margin-top: 10px;
+}
+
+.gikbox_margtop_15px {
+    margin-top: 15px;
+}
+
+.gikbox_margtop_20px {
+    margin-top: 20px;
+}
+
+.gikbox_margtop_25px {
+    margin-top: 25px;
+}
+
+.gikbox_margtop_30px {
+    margin-top: 30px;
+}
+
+.gikbox_margtop_40px {
+    margin-top: 40px;
+}
+
+.gikbox_margtop_50px {
+    margin-top: 50px;
+}
+
+.gikbox_margbottom_01px {
+    margin-bottom: 1px;
+}
+
+.gikbox_margbottom_05px {
+    margin-bottom: 5px;
+}
+
+.gikbox_margbottom_10px {
+    margin-bottom: 10px;
+}
+
+.gikbox_margbottom_15px {
+    margin-bottom: 15px;
+}
+
+.gikbox_margbottom_20px {
+    margin-bottom: 20px;
+}
+
+.gikbox_margbottom_25px {
+    margin-bottom: 25px;
+}
+
+.gikbox_margbottom_30px {
+    margin-bottom: 30px;
+}
+
+.gikbox_margbottom_40px {
+    margin-bottom: 40px;
+}
+
+.gikbox_margbottom_50px {
+    margin-bottom: 50px;
+}
+
+.gikbox_margleftright05px {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+/*#region paddingbox padding */
+
+.gikbox_paddingall_01prc {
+    padding: 1%;
+}
+
+.gikbox_paddingall_05prc {
+    padding: 5%;
+}
+
+.gikbox_paddingall_10prc {
+    padding: 10%;
+}
+
+.gikbox_paddingall_15prc {
+    padding: 15%;
+}
+
+.gikbox_paddingall_20prc {
+    padding: 20%;
+}
+
+.gikbox_paddingall_50prc {
+    padding: 50%;
+}
+
+.gikbox_paddingall_01px {
+    padding: 1px;
+}
+
+.gikbox_paddingall_05px {
+    padding: 5px;
+}
+
+.gikbox_paddingall_10px {
+    padding: 10px;
+}
+
+.gikbox_paddingall_15px {
+    padding: 15px;
+}
+
+.gikbox_paddingall_20px {
+    padding: 20px;
+}
+
+.gikbox_paddingall_50px {
+    padding: 50px;
+}
+
+.gikbox_paddingall_100px {
+    padding: 100px;
+}
+
+.gikbox_paddingall_150px {
+    padding: 150px;
+}
+
+.gikbox_paddingall_200px {
+    padding: 200px;
+}
+/*#endregion gikbox padding*/
+
+
+/*#endregion */
+
+/*#region box background */
+
+.gikbox_bgcolor_white {
+    background-color: white;
+}
+
+.gikbox_bgcolor_red {
+    background-color: red;
+}
+
+.gikbox_bgrdcolor_green {
+    background-color: green;
+}
+
+.gikbox_bgrdcolor_blue {
+    background-color: blue;
+}
+
+.gikbox_bgrdcolor_yellow {
+    background-color: yellow;
+}
+
+
+.gikbox_bgrdcolor_yellow {
+    background-color: black;
+}
+
+.gikbox_bgrdcolor_transprent {
+    background-color: transparent;
+}
+
+
+
+
+/*#endregion box background*/
+
+/*#endregion    box */
+
+
+/*#region   textes */
+
+/*#region       textes styles : ops-txt-sty[type]-[valeurs] */
+
+/*#region textes styles size : ops-txt-sty[size]-[valeurs] */
+
+.gik_txt_size-1rem {
+    font-size: 1rem;
+}
+
+.gik_txt_size-2rem {
+    font-size: 2rem;
+}
+
+.gik_txt_size-3rem {
+    font-size: 3rem;
+}
+
+.gik_txt_size-4rem {
+    font-size: 4rem;
+}
+
+.gik_txt_size-5rem {
+    font-size: 5rem;
+}
+
+.gik_txt_color_white {
+    color: white;
+}
+
+.gik_txt_color_black {
+    color: black;
+}
+
+.gik_txt_weight_bold {
+    font-weight: bold;
+}
+
+/*#endregion textes styles size */
+
+/*#endregion  textes styles */
+
+
+
+
+
+/*#endregion textes */
+

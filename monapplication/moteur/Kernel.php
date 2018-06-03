@@ -18,6 +18,20 @@ class Kernel {
             require_once(ROOT."/monapplication/model/".$class.".php");
    }
 
+public static function initListSearch($saisie){
+        spl_autoload_register(array("Kernel", "autoload"));
+        $route = Router::analyze( "find" );
+        Kernel::getInstanceControleur($route);
+}
+
+public static function SearchFilm($idFilm){
+        spl_autoload_register(array("Kernel", "autoload"));
+        $query="film/".$idFilm;
+        $route = Router::analyze( $query);
+
+        Kernel::getInstanceControleur($route);
+}
+
 
    public static function run()
    {
@@ -25,12 +39,17 @@ class Kernel {
       spl_autoload_register(array("Kernel", "autoload"));
 
       // Analyser la requete
+
       $query = isset($_GET["query"]) ? $_GET["query"] : "";
     
       $route = Router::analyze( $query );
-      
+        Kernel::getInstanceControleur($route);
+}
+
       // Instancier le controleur et
       // executer l'action
+
+      public static function getInstanceControleur($route){
       $class = $route["controler"]."Controller";
      
       if(class_exists($class)) {
@@ -39,7 +58,7 @@ class Kernel {
          if( is_callable( $method ))
             call_user_func($method);   
       }
-    
+                //print_r($method);
       // Gestion des erreurs
       // �a reste � faire : par exemple si l'url n'existe pas ou qu'elle a trop de param�tres etc ... 
      

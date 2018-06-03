@@ -1,0 +1,222 @@
+@import "reset.css";
+@import "generick/gik_generic_styles.css";
+@import "generick/sik_specific_styles.css";
+
+
+/****************************************************************************/
+/* Ce fichier rassemble toutes les classes CSS spécifiques au projet courant*/
+/*                                                                          */
+/* règles de syntaxe  : ajouter spe_ devant chaque nom de classe           */
+/*                                                                          */
+/****************************************************************************/
+
+/*#region classes spécifiques */
+
+.spec_fs_1_1_rem{font-size:1.1rem;}
+
+#mouseX {
+    width: 50px;
+    box-shadow: 2px 2px 5px #aaa inset;
+}
+
+#mouseY {
+    width: 50px;
+    box-shadow: 2px 2px 5px #aaa inset;
+}
+
+/*#endregion */
+/*#region Balises HTML */
+
+body {
+    font-family: 'Myriad Pro';
+    font-size:1.5rem;
+}
+
+/*
+header {
+    text-align: center;
+    background-image: url(../images/486421008.jpg);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    border-bottom: 5px solid #007acc;
+    background-color: #E4E7EC;
+    padding: 2%;
+}
+
+main {
+    width: 1920px;
+    height: 100%;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.txtcolormyblue {
+    color: #007acc
+}
+
+h1, h2, h3, h4, h5 {
+    color: #007acc;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+header {
+    height: 296px
+}
+
+a {
+    color: #d73351;
+    text-decoration: none
+}*/
+
+/*#endregion Balises HTML */
+
+/*#region Génériques locales */
+/*.spec_font_rose {
+    color: #d73351;
+}
+
+.spec_bgrdrose {
+    background-color: #d73351;
+}
+
+.spec_font_rouge {
+    color: #ab0000;
+}*/
+
+/*#endregion */
+
+/*#region Outils */
+
+.spec_header{
+    margin-top:20px;
+}
+.spec_header_ancre{
+    margin-top:80px;
+}
+
+.spec_tool * {
+    visibility: hidden;
+}
+.spec_tool:hover *{
+    visibility:visible;
+}
+
+.spec_tool_ancre * {
+    visibility: visible;
+}
+
+.spec_mytools{
+    width:100%;
+    height:15px;
+    background-color:#007acc;
+    box-shadow: 0px 0px 5px 1px #000000 ;
+    transition:height linear 0.3s;
+}
+
+.spec_mytools:hover{
+    height:70px;
+transition:height linear 0.3s;
+}
+
+.spec_mytools_ancre {
+    height: 70px;
+    transition: height linear 0.3s;
+}
+
+
+.spec_posxposy {
+    height: auto;
+    width: 60px;
+    box-shadow: 1px 1px 5px 1px #000000 inset;
+    border-radius: 3px;
+}
+
+.calcvisibility {
+    /*display: none;*/
+    visibility: hidden;
+}
+
+.mouvableelement {
+    width: 256px;
+    height: 256px;
+    /*background-color: greenyellow;*/
+    top: 150px;
+    left: 300px;
+    background-image: url(../images/calculette2.png);
+}
+
+#dropcontainer {
+    top: 200px;
+    left: 100px;
+    min-width: 70px;
+    min-height: 70px;
+}
+
+#affichagetoolbar{
+    width:100%;
+    height:15px;
+    position:absolute;
+    background-color:transparent;
+    top:0px;
+    left:0px;
+}
+
+.spec_punaise {
+    width:15px;
+    height:15px;
+    background-image:url(../images/punaise_off_blue.png);
+    background-position: center;
+    background-repeat:no-repeat;
+}
+
+.spec_punaise:hover {
+    background-image: url(../images/punaise_on_blue.png);
+}
+
+.spec_punaise_ancre {
+    width: 15px;
+    height: 15px;
+    background-image: url(../images/punaise_off_ancre_blue.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.spec_punaise_ancre:hover {
+    background-image: url(../images/punaise_on_ancre_blue.png);
+}
+
+
+
+
+/*#endregion */
+
+/*#region menu Navigation */
+.spec_frame_media {
+    width: 375px;
+    height: 667px;
+    border: 1px solid #aaa;
+    overflow: hidden;
+}
+
+
+
+/*#endregion */

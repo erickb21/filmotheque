@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+<?php require_once("./personne.php") ?>
+    <script type="text/javascript" src="./js/script.js"></script>
+</head>
+<body >
+
+<form id="formNoms" class="form-group">
+<!--<input list="person" type="text" id="nom2" name="nom2"    onkeyup="autocompletion(this.value);">
+<datalist id="person" >
+    <option>toto</option>
+</datalist>-->
+
+</form>
+
+    <section><input id="cherche" type="button" onclick="chercheInfos()" value="Chercher" /></section>
+    <section id="infos" class="spec_infos">
+
+    </section>
+    <script type="text/javascript">addListeNom();</script>
+</body>
+</html>
