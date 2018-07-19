@@ -24,13 +24,13 @@ public static function initListSearch($saisie){
         Kernel::getInstanceControleur($route);
 }
 
-public static function SearchFilm($idFilm){
-        spl_autoload_register(array("Kernel", "autoload"));
-        $query="film/".$idFilm;
-        $route = Router::analyze( $query);
+//public static function SearchFilm($idFilm){
+//        spl_autoload_register(array("Kernel", "autoload"));
+//        $query="film/".$idFilm;
+//        $route = Router::analyze( $query);
 
-        Kernel::getInstanceControleur($route);
-}
+//        Kernel::getInstanceControleur($route);
+//}
 
 
    public static function run()

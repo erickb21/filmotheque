@@ -1,6 +1,7 @@
 {
   "ExpandedNodes": [
     "",
+    "\\js",
     "\\monapplication",
     "\\monapplication\\controler",
     "\\monapplication\\model",
@@ -8,9 +9,7 @@
     "\\monapplication\\view",
     "\\monapplication\\view\\error404",
     "\\monapplication\\view\\film",
-    "\\monapplication\\view\\index",
-    "\\monapplication\\view\\layout"
+    "\\monapplication\\view\\index"
   ],
-  "SelectedNode": "\\monapplication\\controler\\FilmController.php",
   "PreviewInSolutionExplorer": false
 }

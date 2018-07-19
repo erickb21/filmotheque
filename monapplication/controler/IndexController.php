@@ -4,8 +4,7 @@ class IndexController extends Controler {
    
     public function display()
     {
-
-      $limit = $this->route["params"]["limit"];
+        $limit = $this->route["params"]["limit"];
         $randomFilms = Film::getListRandom($limit);
 
    
