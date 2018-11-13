@@ -6,20 +6,23 @@ addListeFilms();
 
 
 function requestajax(dataToSend, route) {
-    submitMethod = "POST";
-    //submitMethod = "GET"
-    var pageUrl = "initsearch.php";
-    syncMethod = true; // Méthode asynchrone
-    syncMethod = false; // Méthode Syncrone
+    //submitMethod = "POST";
+    submitMethod = "GET";
+    //alert(window.location.href);
+    var pageUrl = window.location.href + "index.php?query=autocomplete" + "&" + dataToSend;
+    //var pageUrl = "initsearch.php";
+    syncMethod = false; // Méthode asynchrone
+    syncMethod = true; // Méthode Syncrone
     //user = "" //nom d'utilisateur as string si "pageUrl" est sécurisée
     //password = "" // mot de passe as string si "pageUrl" est sécurisée
 
     ajaxrequest.open(submitMethod, pageUrl, true);
     if (submitMethod == "POST") {
         ajaxrequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    }
+        //ajaxrequest.setRequestHeader("Content-Type", "text/plain");
+}
     //alert(dataToSend);
-    ajaxrequest.send(dataToSend);
+    ajaxrequest.send("autocompletion");
  
 
 
@@ -39,16 +42,17 @@ ajaxrequest.onreadystatechange = function () {
 
 
 function stateComplete() {
-    var tmp = ajaxrequest.responseText //.split(":");
+    var tmp = ajaxrequest.responseText; //.split(":");
     //if (typeof (tmp[1]) != "undefined") {
     //    f.elements["string1_r"].value = tmp[1];
     //    f.elements["string2_r"].value = tmp[2];
     //}
     //for (var i = 0; i < tmp.length; i++) {
-    //alert("stateComplete" + tmp);
+    //alert("stateComplete :" + tmp);
 
 
-    listeNm(tmp);
+    listeNm(tmp); // retourne la liste des noms
+
     //alert(traitement);
     //switch (traitement) {
     //    case "getSaisie": listeNm(tmp); break;
@@ -73,10 +77,12 @@ function stateComplete() {
             //alert(infosFilm[0]);
         }
         //*******************
-        var monbouton = document.getElementById("SearchButton");
+        //var monbouton = document.getElementById("SearchButton");
+        
         //alert("nbelem = " + document.getElementById("listfilms").options.length);
         
-        if (document.getElementById("listfilms").options.length <= 2) {window.focus();};
+        if (document.getElementById("listfilms").options.length <= 2) { window.focus(); }
+
 
     }
 
@@ -131,29 +137,35 @@ function stateUninitialized() {
 
 // **************************
 
+//création de la zone de recherche
 function addListeFilms() {
     //alert("addliste");
     //var divSearchFilm = document.createElement("DIV");
     //divSearchFilm.setAttribute("id", "searchzone");
     //divSearchFilm.setAttribute("class", "searchzone");
     //document.getElementById("formFilmSearch").appendChild(divSearchFilm);
-
-
     var rechercheFilm = document.createElement("INPUT");
     rechercheFilm.setAttribute("id", "search");
     rechercheFilm.setAttribute("type", "search");
     rechercheFilm.setAttribute("required","");
     rechercheFilm.setAttribute("list", "listfilms");
+    rechercheFilm.setAttribute("autocomplete", "off");
     rechercheFilm.setAttribute("placeholder", "rechercher un film");
     rechercheFilm.setAttribute("onkeyup", "autocompletion(this.value);");
+    //rechercheFilm.setAttribute("onchange", "onclick="this.href =\'film/\' + document.getElementById(\'listfilms\').options[0].dataset.idfilm;");
+
+
 
     document.getElementById("searchzone").appendChild(rechercheFilm);
     var inhtm = document.getElementById("searchzone").innerHTML;
-    document.getElementById("searchzone").innerHTML = inhtm + '<label class="label-icon" for="search"><i id="SearchButton" onclick="chercheInfos();" class="material-icons">search</i></label><i class="material-icons" onclick="clearSearh();" >close</i>';
+    //document.getElementById("searchzone").innerHTML = inhtm + '<label class="label-icon" for="search"><i id="SearchButton";" class="material-icons">search</i></label><i class="material-icons" onclick="clearSearh();" >close</i>';
+    document.getElementById("searchzone").innerHTML = inhtm + '<label class="label-icon" for="search"><a id="lookForFilm" href="" onmouseover="chercheInfos(this);" onclick="linksearch(this);"><i id="SearchButton" class="material-icons">search</i></a></label><i class="material-icons" onclick="clearSearh();" >close</i>';
  
     var dataListeFilms = document.createElement("DATALIST");
     dataListeFilms.setAttribute("id", "listfilms");
+    //dataListeFilms.setAttribute("onclick", "alert(document.getElementById('search').value);");
     document.getElementById("searchzone").appendChild(dataListeFilms);
+
 
     var listeDeFilms = document.createElement("OPTION");
     listeDeFilms.setAttribute("value", "");
@@ -162,34 +174,59 @@ function addListeFilms() {
 }
 
 function clearSearh() {
-    document.getElementById("search").value = ""
-    document.getElementById("listfilms").innerHTML=""
+    document.getElementById("search").value = "";
+    document.getElementById("listfilms").innerHTML = "";
 }
 
 
 function autocompletion(textesaisi) {
     //alert("text = " + textesaisi);
 
-    if (textesaisi == "") { clearSearh() ;return; };
+    if (textesaisi == "") { clearSearh(); return; }
 
     data = "saisie=" + textesaisi + "%";
   
-    traitement = "getSaisie";
+    //traitement = "getSaisie";
     requestajax(data);
-    return true
-};
+    return true;
+}
 
-function chercheInfos() {
-    var selectionFilm = document.getElementById("listfilms");//document.getElementById("search").value;
+function chercheInfos(element) {
+    var input = document.getElementById("search");
+    autocompletion(input.value);
+    //input.value = input.value;
+   
 
-    //alert("id du film sélectionné " + selectionFilm.options[0].dataset.idfilm);
-    var filmId = "film/" + selectionFilm.options[0].dataset.idfilm;
-    //alert("chemin : " + filmId);
-    window.location = filmId;
-    //return;
-    //data = "infos=" + selectionFilm.options[0].id;//+ "%";
-    //traitement = "getInfos";
-    //requestajax(data);
+
+
+
+
+
+   //*********************************
+   // var selectionFilm = document.getElementById("listfilms");//document.getElementById("search").value;
+
+   // alert("id du film sélectionné " + selectionFilm.options[0].dataset.idfilm);
+   // var filmId = "film/" + selectionFilm.options[0].dataset.idfilm;
+   // //alert(filmId);
+   //// alert("chemin : " + filmId);
+   //alert("origin : " + window.location.origin);
+   //alert("href : " + window.location.href);
+   // alert("path :" + document.location.pathname);   
+   // window.location =  filmId;
+   // //alert(window.location);
+   // //return;
+   // //data = "infos=" + selectionFilm.options[0].id;//+ "%";
+   // //traitement = "getInfos";
+   // //requestajax(data);
+   // ******************************************
     
-    return true
-};
+    //return true;
+}
+
+function linksearch(element) {
+    var liste = document.getElementById("listfilms");
+    if (liste.options[0].dataset.idfilm == "") {
+        element.href = "";
+    } else {
+    element.href = "film/" + liste.options[0].dataset.idfilm;}
+}

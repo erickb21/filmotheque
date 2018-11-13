@@ -61,7 +61,6 @@
     <Compile Include="composer.json" />
     <Compile Include="composer.lock" />
     <Compile Include="index.php" />
-    <Compile Include="initsearch.php" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\config" />
@@ -85,5 +84,8 @@
     <Folder Include="monapplication\view" />
     <Folder Include="monapplication" />
     <Folder Include="ressources" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config" />
   </ItemGroup>
 </Project>

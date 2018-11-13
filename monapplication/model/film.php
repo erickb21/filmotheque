@@ -3,11 +3,12 @@
 class Film extends Model {
 
     public static function getFilm( $id ) {
+
         $db = Database::getInstance();
         $sql = "SELECT * FROM films WHERE id_FILMS = :id";
         $stmt = $db->prepare($sql);
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        $stmt->bindValue( ':id', $id, PDO::PARAM_INT); 
+        $stmt->bindValue( ':id', $id, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetch();
     }
@@ -15,7 +16,7 @@ class Film extends Model {
     public static function getRealisateur( $id )
     {
       $db = Database::getInstance();
-      $sql = 
+      $sql =
       "SELECT * FROM realisateurs as r
        INNER JOIN films_realisateurs as fr
        ON r.id_REALISATEURS = fr.id_REALISATEURS_FR
@@ -23,7 +24,7 @@ class Film extends Model {
       ";
       $stmt = $db->prepare($sql);
       $stmt->setFetchMode(PDO::FETCH_ASSOC);
-      $stmt->bindValue( ':id', $id, PDO::PARAM_INT); 
+      $stmt->bindValue( ':id', $id, PDO::PARAM_INT);
       $stmt->execute();
       return $stmt->fetchAll();
     }
@@ -31,7 +32,7 @@ class Film extends Model {
     public static function getGenre( $id )
     {
         $db = Database::getInstance();
-        $sql = 
+        $sql =
         "SELECT * FROM genres as g
          INNER JOIN films_genres as fg
          ON g.id_GENRES = fg.id_GENRES_FG
@@ -39,7 +40,7 @@ class Film extends Model {
         ";
         $stmt = $db->prepare($sql);
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        $stmt->bindValue( ':id', $id, PDO::PARAM_INT); 
+        $stmt->bindValue( ':id', $id, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll();
     }
@@ -53,7 +54,7 @@ class Film extends Model {
         return $stmt->fetchAll();
     }
 
-   public static function getListRandom($limit) 
+   public static function getListRandom($limit)
    {
         $db = Database::getInstance();
         $sql = "SELECT id_FILMS, titre_FILMS, image_FILMS  FROM films ORDER BY RAND() LIMIT :limit";
@@ -65,17 +66,39 @@ class Film extends Model {
    }
 
    public static function lookforSearch( $saisie ) {
-    
       $db = Database::getInstance();
       $sql = "SELECT id_FILMS, titre_FILMS FROM films WHERE titre_FILMS like :saisie ORDER BY titre_FILMS " ;
       $stmt = $db->prepare($sql);
       $stmt->setFetchMode(PDO::FETCH_ASSOC);//FETCH_ASSOC
-      $stmt->bindValue( ':saisie', $saisie, PDO::PARAM_STR); 
+      $stmt->bindValue( ':saisie', $saisie, PDO::PARAM_STR);
       $stmt->execute();//array(":id" => $idtitre
-      return $stmt->fetchall();
+	  return $stmt->fetchall();
+	  //if (count($stmt)===0)
+	  //{
+	  //    return $response;
+	  //      //die();
+	  //} else
+	  //{return $stmt;}
+
+
+
+
+	  //	  var_dump($stmt->fetchall());
+ //die();
+
    }
 
-}
+
+
+
+
+
+    //echo $listeFilms;
+        //    $template = $this->twig->loadTemplate('/index/display.html.twig');
+        //echo $template->render(array(
+        //    'randomFilms'  => $randomFilms
+        //));
+    }
 
 class searchfilm {
 
@@ -85,7 +108,7 @@ class searchfilm {
       $sql = "SELECT * FROM personne WHERE titre_FILMS = :nmp";
       $stmt = $bdd->prepare($sql);
       $stmt->setFetchMode(PDO::FETCH_ASSOC);//FETCH_ASSOC
-      $stmt->bindValue( ':nmp', $nomfilm, PDO::PARAM_STR); 
+      $stmt->bindValue( ':nmp', $nomfilm, PDO::PARAM_STR);
       $stmt->execute();//array(":id" => $id
       return $stmt->fetchall();
 

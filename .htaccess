@@ -4,7 +4,9 @@ Options +FollowSymLinks
 RewriteEngine On
 
 # Adresse de base de ré-écriture
-RewriteBase /filmotheque
+# RewriteBase /PHP/filmotheque
+ RewriteBase /mesprojets/filmotheque
+
 
 
 # Règles
