@@ -12,8 +12,6 @@ class Database {
 
    static public function test_connection() {
 	   $servername = "localhost";
-
-
 	   //*** paramètres serveur Dev ***//
 	   $username = "root";
 	   $password = "";
@@ -27,18 +25,7 @@ class Database {
 	   {
 		   echo "Connection failed: " . $e->getMessage();
 	   }
-	   //$servername   = "localhost";
-	   //$database = "annuaire_films";
-	   //$username = "erick";
-	   //$password = "Mami90962000!optimic";
 
-	   //// Create connection
-	   //$conn = new mysqli($servername, $username, $password);
-	   //// Check connection
-	   //if ($conn->connect_error) {
-	   //    die("Connection failed: " . $conn->connect_error);
-	   //}
-	   //echo "Connected successfully";
 	   return true;
    }
 
