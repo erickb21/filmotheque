@@ -12,9 +12,7 @@ class Database {
 
    static public function test_connection() {
 	   $servername = "localhost";
-	   //*** paramètres serveur Prod ***//
-	   //$username = "erick";
-	   //$password = "Mami90962000!optimic";
+
 
 	   //*** paramètres serveur Dev ***//
 	   $username = "root";
@@ -53,9 +51,6 @@ class Database {
 
 define ("db_name","annuaire_films");
 define ("server_name","localhost");
-		//*** paramètres serveur Prod ***//
-//define ("user","erick");
-//define ("password","Mami90962000!optimic");
 		//*** paramètres serveur Dev ***//
 define ("user","root");
 define ("password","");
